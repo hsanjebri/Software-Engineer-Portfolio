@@ -89,34 +89,49 @@
     /* Hide 'An' if not needed, or keep it static */
   }
 
-  /* Force static positioning to prevent overlaps */
+  /* Force static positioning to prevent overlaps and center text */
   .landing-info h2,
-  h2.landing-info-h2,
+  h2.landing-info-h2 {
+    position: static !important;
+    display: block !important;
+    width: 100% !important;
+    margin: 0 auto !important;
+    text-align: center !important;
+    white-space: normal !important;
+    transform: none !important;
+    height: auto !important;
+    letter-spacing: 1px !important;
+  }
+  
   .landing-h2-1,
   .landing-h2-info {
     position: static !important;
-    display: block;
-    width: auto;
-    margin: 0 !important;
-    font-size: 20px !important;
-    line-height: 1.5 !important;
-    white-space: normal;
-    text-align: center;
-    height: auto !important;
+    display: block !important;
+    width: 100% !important;
+    text-align: center !important;
+    margin: 0 auto !important;
+    white-space: normal !important;
     transform: none !important;
-    /* Remove any transforms */
   }
 
-  /* Specific styling for the distinct parts */
   .landing-h2-1 {
-    font-size: 14px !important;
+    font-size: 16px !important;
     color: var(--accentColor);
     font-weight: 700;
   }
 
   .landing-h2-info {
-    font-size: 8px !important;
+    font-size: 14px !important;
     color: rgba(255, 255, 255, 0.9);
+  }
+
+  .landing-info h2 {
+    margin-left: 0 !important;
+  }
+
+  h2.landing-info-h2 {
+    margin-left: 0 !important;
+    width: auto;
   }
 
   .landing-info-h2::after {
@@ -128,7 +143,7 @@
     display: block;
     position: relative !important;
     width: 100%;
-    max-width: 380px;
+    max-width: 280px;
     margin: 0 auto;
     z-index: 1;
     order: 2;
