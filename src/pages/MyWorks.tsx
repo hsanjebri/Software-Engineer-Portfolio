@@ -20,10 +20,24 @@ const MyWorks = () => {
           <div className="myworks-card" key={project.id} data-cursor="disable">
             <div className="myworks-card-number">0{index + 1}</div>
             <div className="myworks-card-image">
-              <img src={project.image} alt={project.title} />
+              {project.link ? (
+                <a href={project.link} target="_blank" rel="noopener noreferrer">
+                  <img src={project.image} alt={project.title} />
+                </a>
+              ) : (
+                <img src={project.image} alt={project.title} />
+              )}
             </div>
             <div className="myworks-card-info">
-              <h3>{project.title}</h3>
+              <h3>
+                {project.link ? (
+                  <a href={project.link} target="_blank" rel="noopener noreferrer">
+                    {project.title}
+                  </a>
+                ) : (
+                  project.title
+                )}
+              </h3>
               <p className="myworks-card-category">{project.category}</p>
               <p className="myworks-card-description">{project.description}</p>
               <p className="myworks-card-tech">{project.technologies}</p>

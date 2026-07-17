@@ -366,7 +366,7 @@ const Play = () => {
           <div className="player-bar opponent-bar">
             <div className="player-info">
               <div className="player-avatar">
-                <img src="/images/hsan.jebri.jpg" alt="Hassan Jebri" />
+                <img src="/images/hassan-profile-img.jpg" alt="Hassan Jebri" />
               </div>
               <div className="player-details">
                 <span className="player-name">Hassan Jebri</span>

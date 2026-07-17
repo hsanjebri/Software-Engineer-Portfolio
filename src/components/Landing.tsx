@@ -32,7 +32,7 @@ const Landing = ({ children }: PropsWithChildren) => {
           </div>
           {/* Mobile photo - shows only on mobile when 3D character is hidden */}
           <div className="mobile-photo">
-            <img src="/images/hsan.jebri.jpg" alt="Hassan Jebri" />
+            <img src="/images/hassan-profile-img.jpg" alt="Hassan Jebri" />
           </div>
         </div>
         {children}

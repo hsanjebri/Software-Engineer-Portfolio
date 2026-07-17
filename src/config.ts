@@ -62,19 +62,17 @@ export const config = {
             technologies: ["Spring Boot", "Angular", "REST APIs", "Cloud Storage", "Adaptive Streaming"]
         },
         {
-            position: "Mobile Developer",
+            position: "Full Stack Developer",
             company: "Accompany Consulting Tunis, Menzah 4",
             period: "Jun. 2024 - Aug. 2024",
             location: "Tunis, Tunisia",
             description:
-                "Developed an internal communication app with real-time video/voice calling and chat using Flutter, Firebase, and Laravel.",
+                "Built an internal HR management module with Angular 17 — employee dashboards, leave requests, and real-time notifications via WebSockets — backed by Spring Boot 3.2 REST APIs for user management, role assignment, and reporting with JWT-secured endpoints and PostgreSQL.",
             responsibilities: [
-                "Building Flutter mobile features for real-time communication",
-                "Developing Laravel APIs for users, calls, and sessions",
-                "Integrating Firebase Auth, Firestore, and Storage",
-                "Implementing presence, notifications, and message sync"
+                "Built internal HR management module with Angular 17, including employee dashboards, leave requests, and real-time notifications via WebSockets",
+                "Developed Spring Boot 3.2 REST APIs for user management, role assignment, and data reporting, with JWT-secured endpoints and PostgreSQL persistence"
             ],
-            technologies: ["Flutter", "Firebase", "Laravel", "REST APIs", "Firestore", "Storage"]
+            technologies: ["Angular 17", "Spring Boot 3.2", "WebSockets", "JWT", "PostgreSQL", "REST APIs"]
         },
         {
             position: "Full Stack Developer",
@@ -158,8 +156,19 @@ export const config = {
             category: "Civic Tech / AI",
             technologies: "Spring Boot 4, Angular 19, PostgreSQL, pgvector, Gemini, Ollama, RAG, Leaflet",
             image: "/images/Capture d'écran 2026-07-17 145703.png",
+            link: "https://github.com/hsanjebri/dossia-",
             description:
                 "Stop guessing. Start knowing.\n\nDosya (دوسيا — \"file / dossier\" in Tunisian Arabic) is a civic tech platform that helps Tunisian citizens navigate government bureaucracy — passeport, CIN, équivalence de diplôme, résidence, and more. Every answer is grounded in verified procedure data stored in PostgreSQL — not improvised by AI.\n\nTalk in French, English, or Tunisian Derja with voice guides Sofia · Yasmine · Alex. Ask where to go, what papers you need, and get step-by-step guidance with sources and nearest offices on a map.\n\n✨ Key Features\n📚 Verified procedure catalog with sourceUrl + lastVerifiedAt\n🤖 RAG chatbot (Gemini / Ollama) over Procedure records only — offline DB fallback when LLMs are down\n🎤 Voice agents: Sofia (FR), Yasmine (Tunisian Derja), Alex (EN) with browser STT/TTS\n🗺️ Office locator with Leaflet + OSRM routing\n🔐 JWT HttpOnly cookie auth, chat history, and admin verify/publish workflow\n🕷️ Python scraper pipeline (demarches.tn → draft → human verify → embed)"
+        },
+        {
+            id: 13,
+            title: "Care for Elders",
+            category: "Healthcare / Alzheimer",
+            technologies: "Spring Boot, Angular, Healthcare, Patient Care",
+            image: "/images/Capture d'écran 2026-07-17 174513.png",
+            link: "https://github.com/hsanjebri/care4elders",
+            description:
+                "A healthcare platform that connects Alzheimer's patients with their doctors to ensure better, continuous medical treatment. Helps families and caregivers coordinate care, track treatment, and keep patients linked to the right medical support."
         },
         {
             id: 11,
@@ -167,6 +176,7 @@ export const config = {
             category: "Investment Platform",
             technologies: "Spring Boot 3.4, Angular 19, PostgreSQL, Sumsub KYC/AML",
             image: "/images/image.png",
+            link: "https://3keys-front-8sk4.vercel.app/",
             description:
                 "Investment platform for fractional real estate and car assets. Built with Spring Boot 3.4 and Angular 19 — secure REST APIs for portfolio management and real-time transaction tracking, Sumsub KYC/AML for investor verification, optimized PostgreSQL schemas for portfolios and wallets (35% faster queries), and a multi-layer recommendation system (semantic similarity, exact match, tag-based boosting) that surfaces personalized opportunities from portfolio and wallet balance."
         },
@@ -176,6 +186,7 @@ export const config = {
             category: "AI Assistant",
             technologies: "Python, LLMs, NLP, APIs, Multi-agent Systems",
             image: "/images/jarvis.png",
+            link: "https://github.com/hsanjebri/jarvis",
             description:
                 "Why JARVIS?\nAs a Software Engineer, I found myself overwhelmed by back-to-back meetings, fragmented communications across Slack and WhatsApp, and a never-ending stream of tasks. I needed a tool for myself—a true second brain that didn't just record, but understood my workflow.\n\nJARVIS was built to solve this. From real-time meeting assistance to cross-platform message summarization, JARVIS ensures you stay in the flow, focus on coding, and never miss a critical detail again.\n\n✨ Key Features\n🎤 Meeting Agent: Joins Google Meet/Zoom, provides real-time transcription, and generates actionable meeting notes.\n💬 Message Agent (Beta): Intelligent monitoring of Slack, WhatsApp, and Email with automated summarization.\n✅ Task Agent (Working): Automated GitHub PR reviews, dependency management, and file organization.\n🌍 Multilingual Support: Fluent in English, French, and Tunisian Arabic.\n🛡️ Stealth Mode: Localized browser processing for privacy during sensitive meetings."
         },
@@ -185,6 +196,7 @@ export const config = {
             category: "Food Delivery",
             technologies: "Python, PyTorch, BERT, Kafka, Flask, Redis, Spring Boot, Angular",
             image: "/images/oranger.png",
+            link: "https://github.com/hsanjebri/leggy_client_web",
             description:
                 "A comprehensive food delivery platform (Spring Boot/Angular) featuring a custom ML-based recommendation microservice. Uses Python, BERT, and Kafka to deliver real-time personalized suggestions for a network of +2800 restaurants."
         },
@@ -194,6 +206,7 @@ export const config = {
             category: "Real Estate / AI",
             technologies: "Spring Boot, Angular, TensorFlow, Firebase",
             image: "/images/dari.png",
+            link: "https://github.com/hsanjebri/Dari",
             description:
                 "A comprehensive real estate application offering property listings, advanced search, filtering, and recommendation services. Integrated TensorFlow for predictive analytics (price estimation) and leveraged Firebase for secure real-time data synchronization and authentication."
         },
