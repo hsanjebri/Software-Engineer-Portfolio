@@ -274,6 +274,47 @@ export const config = {
                 "Bangladesh's first intelligent advanced AI chatbot powered by a custom Large Language Model. Features natural language understanding, contextual conversations, and multilingual support including Bengali."
         },
     ],
+    certificates: [
+        {
+            id: 1,
+            title: "Google Project Management Professional Certificate",
+            issuer: "Google / Coursera",
+            date: "Nov 4, 2024",
+            image: "/images/google-project-management.png",
+            file: "/images/google-project-management.pdf",
+            link: "https://coursera.org/verify/professional-cert/ZWXZ4DELLPPN"
+        },
+        {
+            id: 2,
+            title: "IBM Full Stack Software Developer Professional Certificate",
+            issuer: "IBM / Coursera",
+            date: "Dec 30, 2024",
+            image: "/images/ibm-fullstack.png",
+            link: "https://coursera.org/verify/professional-cert/6Z6TN1YYE584"
+        },
+        {
+            id: 3,
+            title: "Angular - The Complete Guide (2025 Edition)",
+            issuer: "Udemy",
+            date: "Feb 25, 2025",
+            image: "/images/angular-certif.png",
+            link: "https://ude.my/UC-4aac3d72-20ec-4c1c-b992-91a32c2ee38b"
+        },
+        {
+            id: 4,
+            title: "IELTS Academic – Overall Band 7.0 (CEFR C1)",
+            issuer: "IELTS",
+            date: "",
+            file: "/images/ielts-result.pdf",
+            scores: {
+                overall: "7.0",
+                listening: "8.0",
+                reading: "7.5",
+                writing: "6.0",
+                speaking: "6.0"
+            }
+        }
+    ],
     contact: {
         email: "jebrihassan66@gmail.com",
         github: "https://github.com/hsanjebri",
