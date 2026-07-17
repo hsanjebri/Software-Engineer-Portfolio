@@ -127,9 +127,49 @@ export const config = {
                 "Collaborating with clients on requirements and timelines"
             ],
             technologies: ["Full-Stack", "APIs", "Databases", "Authentication"]
+        },
+        {
+            position: "Software Engineer",
+            company: "3keys — DinoByte Information Technology, Dubai, UAE (Remote)",
+            period: "Dec. 2025 - Present",
+            location: "Dubai, UAE (Remote)",
+            description:
+                "Developing and maintaining an investment platform with Spring Boot 3.4 and Angular 19 — secure REST APIs for portfolio management and real-time transaction tracking, Sumsub KYC/AML integration, PostgreSQL schema optimization (35% faster queries), and a multi-layer recommendation system for personalized investment opportunities across fractional real estate and car assets.",
+            responsibilities: [
+                "Developed and maintained an investment platform using Spring Boot 3.4 and Angular 19, implementing secure REST APIs for portfolio management and real-time transaction tracking",
+                "Integrated Sumsub KYC/AML to verify investor identities before platform access",
+                "Designed and optimized PostgreSQL schemas for investment portfolios and user wallets, reducing query response time by 35% through indexing and query refactoring",
+                "Developed and trained a recommendation system that analyzes user portfolio and wallet balance to surface personalized investment opportunities, using a multi-layer scoring model (semantic similarity, exact match, and tag-based boosting) across fractional real estate and car assets"
+            ],
+            technologies: [
+                "Spring Boot 3.4",
+                "Angular 19",
+                "PostgreSQL",
+                "REST APIs",
+                "Sumsub KYC/AML",
+                "Recommendation Systems"
+            ]
         }
     ],
     projects: [
+        {
+            id: 12,
+            title: "Dosya دوسيا",
+            category: "Civic Tech / AI",
+            technologies: "Spring Boot 4, Angular 19, PostgreSQL, pgvector, Gemini, Ollama, RAG, Leaflet",
+            image: "/images/Capture d'écran 2026-07-17 145703.png",
+            description:
+                "Stop guessing. Start knowing.\n\nDosya (دوسيا — \"file / dossier\" in Tunisian Arabic) is a civic tech platform that helps Tunisian citizens navigate government bureaucracy — passeport, CIN, équivalence de diplôme, résidence, and more. Every answer is grounded in verified procedure data stored in PostgreSQL — not improvised by AI.\n\nTalk in French, English, or Tunisian Derja with voice guides Sofia · Yasmine · Alex. Ask where to go, what papers you need, and get step-by-step guidance with sources and nearest offices on a map.\n\n✨ Key Features\n📚 Verified procedure catalog with sourceUrl + lastVerifiedAt\n🤖 RAG chatbot (Gemini / Ollama) over Procedure records only — offline DB fallback when LLMs are down\n🎤 Voice agents: Sofia (FR), Yasmine (Tunisian Derja), Alex (EN) with browser STT/TTS\n🗺️ Office locator with Leaflet + OSRM routing\n🔐 JWT HttpOnly cookie auth, chat history, and admin verify/publish workflow\n🕷️ Python scraper pipeline (demarches.tn → draft → human verify → embed)"
+        },
+        {
+            id: 11,
+            title: "3keys",
+            category: "Investment Platform",
+            technologies: "Spring Boot 3.4, Angular 19, PostgreSQL, Sumsub KYC/AML",
+            image: "/images/image.png",
+            description:
+                "Investment platform for fractional real estate and car assets. Built with Spring Boot 3.4 and Angular 19 — secure REST APIs for portfolio management and real-time transaction tracking, Sumsub KYC/AML for investor verification, optimized PostgreSQL schemas for portfolios and wallets (35% faster queries), and a multi-layer recommendation system (semantic similarity, exact match, tag-based boosting) that surfaces personalized opportunities from portfolio and wallet balance."
+        },
         {
             id: 9,
             title: "JARVIS",
