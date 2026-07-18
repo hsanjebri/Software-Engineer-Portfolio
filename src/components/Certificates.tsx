@@ -18,18 +18,18 @@ const Certificates = () => {
         <div className="certificates-grid">
           {config.certificates.map((cert) => {
             const href = getHref(cert);
-            const isIelts = Boolean(cert.scores);
+            const showScores = Boolean(cert.scores) && !cert.image;
 
             return (
               <a
                 key={cert.id}
-                className={`certificate-card${isIelts ? " certificate-card--ielts" : ""}`}
+                className={`certificate-card${showScores ? " certificate-card--ielts" : ""}`}
                 href={href}
                 target="_blank"
                 rel="noopener noreferrer"
                 data-cursor="disable"
               >
-                {isIelts && cert.scores ? (
+                {showScores && cert.scores ? (
                   <div className="certificate-ielts">
                     <div className="certificate-ielts-overall">
                       <span className="certificate-ielts-label">Overall</span>

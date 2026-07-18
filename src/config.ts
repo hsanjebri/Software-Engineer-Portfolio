@@ -304,7 +304,8 @@ export const config = {
             id: 4,
             title: "IELTS Academic – Overall Band 7.0 (CEFR C1)",
             issuer: "IELTS",
-            date: "",
+            date: "Dec 21, 2025",
+            image: "/images/ielts-scren.png",
             file: "/images/ielts-result.pdf",
             scores: {
                 overall: "7.0",
