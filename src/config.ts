@@ -127,25 +127,30 @@ export const config = {
             technologies: ["Full-Stack", "APIs", "Databases", "Authentication"]
         },
         {
-            position: "Software Engineer",
-            company: "3keys — DinoByte Information Technology, Dubai, UAE (Remote)",
+            position: "Full Stack Developer",
+            company: "DinoByte Information Technology, Dubai, UAE (Remote)",
             period: "Sep. 2025 - Present",
             location: "Dubai, UAE (Remote)",
             description:
-                "Developing and maintaining an investment platform with Spring Boot 3.4 and Angular 19 — secure REST APIs for portfolio management and real-time transaction tracking, Sumsub KYC/AML integration, PostgreSQL schema optimization (35% faster queries), and a multi-layer recommendation system for personalized investment opportunities across fractional real estate and car assets.",
+                "Working as a core full-time Full Stack Developer for DinoByte Information Technology (Dubai, UAE), contributing to the company's technology projects with a full-time commitment (40h/week).",
             responsibilities: [
-                "Developed and maintained an investment platform using Spring Boot 3.4 and Angular 19, implementing secure REST APIs for portfolio management and real-time transaction tracking",
-                "Integrated Sumsub KYC/AML to verify investor identities before platform access",
-                "Designed and optimized PostgreSQL schemas for investment portfolios and user wallets, reducing query response time by 35% through indexing and query refactoring",
-                "Developed and trained a recommendation system that analyzes user portfolio and wallet balance to surface personalized investment opportunities, using a multi-layer scoring model (semantic similarity, exact match, and tag-based boosting) across fractional real estate and car assets"
+                "Front-end and back-end architecture and development",
+                "API design, integration, and maintenance",
+                "Blockchain and smart contract integration",
+                "Database design and optimization",
+                "DevOps coordination and deployment support",
+                "Performance optimization and security implementation",
+                "Technical documentation and architecture planning"
             ],
             technologies: [
-                "Spring Boot 3.4",
-                "Angular 19",
+                "Full-Stack",
+                "Spring Boot",
+                "Angular",
+                "Blockchain",
+                "Smart Contracts",
                 "PostgreSQL",
                 "REST APIs",
-                "Sumsub KYC/AML",
-                "Recommendation Systems"
+                "DevOps"
             ]
         }
     ],
@@ -158,16 +163,7 @@ export const config = {
             image: "/images/logsy.jpg",
             link: "https://github.com/hsanjebri/Logsy",
             description:
-                "Intelligent, noise-free CI failure analysis for GitHub Actions. Logsy pinpoints the root cause in thousands of log lines, redacts secrets, and posts one concise, actionable PR comment.
-
-✨ Key Features
-🛡️ Zero secret leaks: multi-pass regex + entropy redaction before anything is cached, stored, or sent to an LLM
-🎯 Error normalization and SHA-256 fingerprints to recognize recurring breakages
-⚡ Rules first, LLM second: deterministic matches for Node, Maven, Gradle, Python, Docker; Claude, OpenAI, or local Ollama only when needed
-💬 A single updatable PR comment that flips to a green badge when the build passes
-📊 Flaky test intelligence from test history
-🔒 Self-hostable with Docker Compose; HMAC SHA-256 webhook verification
-🏛️ pnpm + Turborepo monorepo: Fastify server, BullMQ workers, Next.js dashboard, pluggable LLM package"
+                "Intelligent, noise-free CI failure analysis for GitHub Actions. Logsy pinpoints the root cause in thousands of log lines, redacts secrets, and posts one concise, actionable PR comment.\n\n✨ Key Features\n🛡️ Zero secret leaks: multi-pass regex + entropy redaction before anything is cached, stored, or sent to an LLM\n🎯 Error normalization and SHA-256 fingerprints to recognize recurring breakages\n⚡ Rules first, LLM second: deterministic matches for Node, Maven, Gradle, Python, Docker; Claude, OpenAI, or local Ollama only when needed\n💬 A single updatable PR comment that flips to a green badge when the build passes\n📊 Flaky test intelligence from test history\n🔒 Self-hostable with Docker Compose; HMAC SHA-256 webhook verification\n🏛️ pnpm + Turborepo monorepo: Fastify server, BullMQ workers, Next.js dashboard, pluggable LLM package"
         },
         {
             id: 14,
@@ -177,15 +173,7 @@ export const config = {
             image: "/images/rework-banner.png",
             link: "https://github.com/hsanjebri/ksk-scraper",
             description:
-                "Live quality dashboard for the SEBN TN3 rework zone (Mercedes-Benz programme). A NestJS service reads the plant's legacy PHP rework application, stores every record, and pushes new records and closures to a React dashboard over WebSockets.
-
-✨ Highlights
-🔄 Full history sync of 5,939 real records in 107 s with 0 failures; new records reach the dashboard in 3.5 s
-🌉 Cloud bridge: a plant PC agent pushes pages out over HTTPS to a Railway + Vercel deployment, so nothing inside the network is exposed
-🧪 113 passing unit tests, parsers verified against captured live HTML
-🔐 Fail-closed ingest endpoints secured by a shared secret
-🈶 Charset detection for accented French comments (0 corrupted out of 260)
-📈 Three-stage rework flow tracking, error-code analytics, and estimated rework rate / first pass yield"
+                "Live quality dashboard for the SEBN TN3 rework zone (Mercedes-Benz programme). A NestJS service reads the plant's legacy PHP rework application, stores every record, and pushes new records and closures to a React dashboard over WebSockets.\n\n✨ Highlights\n🔄 Full history sync of 5,939 real records in 107 s with 0 failures; new records reach the dashboard in 3.5 s\n🌉 Cloud bridge: a plant PC agent pushes pages out over HTTPS to a Railway + Vercel deployment, so nothing inside the network is exposed\n🧪 113 passing unit tests, parsers verified against captured live HTML\n🔐 Fail-closed ingest endpoints secured by a shared secret\n🈶 Charset detection for accented French comments (0 corrupted out of 260)\n📈 Three-stage rework flow tracking, error-code analytics, and estimated rework rate / first pass yield"
         },
         {
             id: 12,
