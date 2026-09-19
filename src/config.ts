@@ -129,7 +129,7 @@ export const config = {
         {
             position: "Software Engineer",
             company: "3keys — DinoByte Information Technology, Dubai, UAE (Remote)",
-            period: "Dec. 2025 - Present",
+            period: "Sep. 2025 - Present",
             location: "Dubai, UAE (Remote)",
             description:
                 "Developing and maintaining an investment platform with Spring Boot 3.4 and Angular 19 — secure REST APIs for portfolio management and real-time transaction tracking, Sumsub KYC/AML integration, PostgreSQL schema optimization (35% faster queries), and a multi-layer recommendation system for personalized investment opportunities across fractional real estate and car assets.",
@@ -150,6 +150,43 @@ export const config = {
         }
     ],
     projects: [
+        {
+            id: 15,
+            title: "Logsy",
+            category: "DevOps / CI Intelligence",
+            technologies: "Node.js 22, TypeScript, Fastify, Drizzle ORM, PostgreSQL, Redis, BullMQ, Turborepo, Next.js 15",
+            image: "/images/logsy.jpg",
+            link: "https://github.com/hsanjebri/Logsy",
+            description:
+                "Intelligent, noise-free CI failure analysis for GitHub Actions. Logsy pinpoints the root cause in thousands of log lines, redacts secrets, and posts one concise, actionable PR comment.
+
+✨ Key Features
+🛡️ Zero secret leaks: multi-pass regex + entropy redaction before anything is cached, stored, or sent to an LLM
+🎯 Error normalization and SHA-256 fingerprints to recognize recurring breakages
+⚡ Rules first, LLM second: deterministic matches for Node, Maven, Gradle, Python, Docker; Claude, OpenAI, or local Ollama only when needed
+💬 A single updatable PR comment that flips to a green badge when the build passes
+📊 Flaky test intelligence from test history
+🔒 Self-hostable with Docker Compose; HMAC SHA-256 webhook verification
+🏛️ pnpm + Turborepo monorepo: Fastify server, BullMQ workers, Next.js dashboard, pluggable LLM package"
+        },
+        {
+            id: 14,
+            title: "SEBN TN3 Rework Quality Dashboard",
+            category: "Industrial / Real-time Analytics",
+            technologies: "NestJS, TypeORM, React, Socket.io, PostgreSQL, SQLite, Railway, Vercel",
+            image: "/images/rework-banner.png",
+            link: "https://github.com/hsanjebri/ksk-scraper",
+            description:
+                "Live quality dashboard for the SEBN TN3 rework zone (Mercedes-Benz programme). A NestJS service reads the plant's legacy PHP rework application, stores every record, and pushes new records and closures to a React dashboard over WebSockets.
+
+✨ Highlights
+🔄 Full history sync of 5,939 real records in 107 s with 0 failures; new records reach the dashboard in 3.5 s
+🌉 Cloud bridge: a plant PC agent pushes pages out over HTTPS to a Railway + Vercel deployment, so nothing inside the network is exposed
+🧪 113 passing unit tests, parsers verified against captured live HTML
+🔐 Fail-closed ingest endpoints secured by a shared secret
+🈶 Charset detection for accented French comments (0 corrupted out of 260)
+📈 Three-stage rework flow tracking, error-code analytics, and estimated rework rate / first pass yield"
+        },
         {
             id: 12,
             title: "Dosya دوسيا",
