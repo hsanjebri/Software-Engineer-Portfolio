@@ -156,6 +156,16 @@ export const config = {
     ],
     projects: [
         {
+            id: 16,
+            title: "Rowan Hawthorne",
+            category: "Portfolio / Animation",
+            technologies: "Next.js (App Router), TypeScript, GSAP, ScrollTrigger, SplitText, Lenis",
+            image: "/images/project-5.webp",
+            link: "https://github.com/hsanjebri/rowan-hawthorne",
+            description:
+                "A concept portfolio for a fictional wildlife photographer, built to showcase scroll-driven animation and motion design. Next.js App Router with strict TypeScript, GSAP + ScrollTrigger + SplitText for the animation system, and Lenis for smooth scrolling — no UI or CSS libraries.\n\n✨ Key Features\n🎬 Timed hero sequence (a bird lands at a configurable second before any typography moves)\n🖼️ Curated photo pipeline: subjects matched against Unsplash by tags, EXIF and orientation, de-duplicated across series, cached and re-curated every 24h\n🎞️ Optional Films section via the Pexels API\n🌗 Dominant-colour + BlurHash placeholders that fade into the full image via next/image\n🖱️ Custom cursor, lightbox with photographer credits, and a dedicated /credits page\n\nLive demo: rowan-hawthorne.vercel.app"
+        },
+        {
             id: 15,
             title: "Logsy",
             category: "DevOps / CI Intelligence",
