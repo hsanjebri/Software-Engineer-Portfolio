@@ -160,7 +160,7 @@ export const config = {
             title: "AA-VTC",
             category: "Business / Booking",
             technologies: "HTML, CSS, JavaScript, Leaflet, Vercel Serverless Functions, IGN Géoplateforme API",
-            image: "/images/project-4.webp",
+            image: "/images/AA-VTC.png",
             link: "https://aa-vtc.vercel.app/",
             description:
                 "\"Anywhere, Anytime.\" A single-page booking site for AA-VTC, a private chauffeur business in Normandy — built as static HTML/CSS/JS with a single Vercel serverless function, no API keys or billing account needed.\n\n✨ Key Features\n🗺️ Free-data map (Leaflet + IGN Plan tiles) showing the service area, tinted to the brand\n📍 Live address suggestions via IGN Géoplateforme geocoding (BAN addresses + places)\n💶 Real-time fare estimator: road-distance pricing via IGN routing, with forfait packages (1h/4h/8h) suggested automatically when they're cheaper\n💬 WhatsApp-first booking flow, with a graceful fallback to pre-filled WhatsApp messages if suggestions, routing or the map are unavailable\n🔒 Rate-limited, same-site-only fare API (20 estimates/min per visitor)"
