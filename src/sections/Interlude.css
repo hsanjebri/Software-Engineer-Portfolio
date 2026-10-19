@@ -1,0 +1,93 @@
+.interlude {
+  position: relative;
+  height: 380svh; /* scroll distance of the pinned scene */
+  background: #000;
+}
+
+.interlude__stage {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  overflow: hidden;
+  isolation: isolate; /* the multiply blend only sees the colour layer */
+}
+
+/* Living spectrum, seen only through the letters. */
+.interlude__color {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    115deg,
+    #2997ff 0%,
+    #64d2ff 14%,
+    #30d158 28%,
+    #ffd60a 42%,
+    #ff9f0a 56%,
+    #ff375f 70%,
+    #ff9f0a 84%,
+    #2997ff 100%
+  );
+  background-size: 170% 100%; /* ~3 hues visible at once, drifting */
+}
+
+/* Black sheet with white text, multiplied over the colour:
+   black stays black, white letters become windows onto the spectrum. */
+.interlude__knock {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: clamp(20px, 3vw, 40px);
+  background: #000;
+  color: #fff;
+  mix-blend-mode: multiply;
+  will-change: transform;
+}
+
+.interlude__words {
+  display: grid;
+  justify-items: center;
+  font-family: var(--font-sans);
+  font-size: clamp(4.5rem, 1rem + 13vw, 13rem);
+  font-weight: 800;
+  letter-spacing: -0.055em;
+  line-height: 0.95;
+  text-align: center;
+}
+.interlude__word {
+  display: block;
+  padding-inline: 0.04em;
+}
+
+/* Drawn dot instead of a "." glyph: exact geometry to dive through. */
+.interlude__dot {
+  display: inline-block;
+  width: 0.19em;
+  height: 0.19em;
+  margin-left: 0.05em;
+  border-radius: 50%;
+  background: currentColor;
+}
+
+.interlude__label {
+  color: #fff;
+  font-size: var(--fs-lead);
+  font-weight: 500;
+  letter-spacing: var(--tracking-tight);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .interlude {
+    height: auto;
+  }
+  .interlude__stage {
+    position: relative;
+    height: auto;
+    min-height: 100svh;
+    display: grid;
+  }
+  .interlude__knock {
+    position: relative;
+  }
+}
