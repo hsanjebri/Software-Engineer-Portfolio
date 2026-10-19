@@ -14,7 +14,16 @@ export const config = {
     about: {
         title: "About Me",
         description:
-            "I'm a full-stack software engineer with 2+ years of freelance experience building scalable applications. I focus on API development, system integrations, and shipping end-to-end features that are reliable, fast, and production-ready. I'm self-learning, always improving through hands-on work, and currently building projects that blend engineering with smart automation ideas."
+            "I'm a full-stack software engineer with 2+ years of freelance experience building scalable applications. I focus on API development, system integrations, and shipping end-to-end features that are reliable, fast, and production-ready. I'm self-learning, always improving through hands-on work, and currently building projects that blend engineering with smart automation ideas.",
+        // Condensed from the description above for the big About statement.
+        statement:
+            "I build scalable applications and ship features that are reliable, fast, and production-ready. End to end.",
+        photo: "/images/hassan-profile-img.jpg",
+        stats: [
+            { value: "2+", label: "years of freelance experience" }, // about.description
+            { value: "2,800+", label: "restaurants on Leggy, the delivery platform I built" }, // Legy role
+            { value: "2025", label: "Software Engineering degree, ESPRIT" } // ESPRIT education
+        ]
     },
     experiences: [
         {
@@ -112,27 +121,27 @@ export const config = {
             ]
         },
         {
-            position: "Freelancer",
+            position: "Software Engineer",
             company: "Freelance",
             period: "Oct. 2025 - Present",
             location: "Tunis / Remote",
             description:
                 "Working full-time as a freelancer since graduating. Building web applications and integrating AI/ML features based on project needs.",
             responsibilities: [
-                "Developing full-stack web applications end-to-end",
+                "Developing web applications end-to-end",
                 "Integrating APIs, databases, and authentication",
                 "Delivering production-ready features with clean architecture",
                 "Collaborating with clients on requirements and timelines"
             ],
-            technologies: ["Full-Stack", "APIs", "Databases", "Authentication"]
+            technologies: ["APIs", "Databases", "Authentication"]
         },
         {
-            position: "Full Stack Developer",
+            position: "Software Engineer",
             company: "DinoByte Information Technology, Dubai, UAE (Remote)",
             period: "Sep. 2025 - Present",
             location: "Dubai, UAE (Remote)",
             description:
-                "Working as a core full-time Full Stack Developer for DinoByte Information Technology (Dubai, UAE), contributing to the company's technology projects with a full-time commitment (40h/week).",
+                "Working as a core full-time Software Engineer for DinoByte Information Technology (Dubai, UAE), contributing to the company's technology projects with a full-time commitment (40h/week).",
             responsibilities: [
                 "Front-end and back-end architecture and development",
                 "API design, integration, and maintenance",
@@ -143,7 +152,6 @@ export const config = {
                 "Technical documentation and architecture planning"
             ],
             technologies: [
-                "Full-Stack",
                 "Spring Boot",
                 "Angular",
                 "Blockchain",
