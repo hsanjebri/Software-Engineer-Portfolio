@@ -1,0 +1,283 @@
+/* ==========================================================================
+   Hero — name intro, then a laptop that opens and boots (see mac/Mac.css)
+   ========================================================================== */
+
+.hero {
+  /* The claim's size drives where the laptop sits beneath it. */
+  --claim-fs: var(--fs-h2);
+  --claim-lines: 1;
+  --claim-top: calc(var(--nav-h) + 4svh);
+  --claim-h: calc(var(--claim-fs) * 1.05 * var(--claim-lines));
+  position: relative;
+  height: 300svh; /* scroll distance of the pinned scene */
+  background: var(--bg);
+}
+
+.hero__stage {
+  position: sticky;
+  top: 0;
+  height: 100svh;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+/* ---------- Depth layer (parallax) ---------- */
+
+.hero__depth {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  contain: layout;
+}
+
+.hero__glow {
+  --w: min(1500px, 130vw);
+  position: absolute;
+  top: 56%;
+  left: 50%;
+  width: var(--w);
+  height: 110svh;
+  /* Centred with margins: GSAP owns this element's transform. */
+  margin: -55svh 0 0 calc(var(--w) / -2);
+  /* Soft Apple-colour blooms; no purple, no neon. */
+  background:
+    radial-gradient(34% 40% at 30% 42%, rgba(0, 113, 227, 0.2), transparent 70%),
+    radial-gradient(30% 36% at 70% 36%, rgba(50, 173, 230, 0.22), transparent 70%),
+    radial-gradient(30% 34% at 38% 74%, rgba(255, 149, 0, 0.17), transparent 70%),
+    radial-gradient(28% 32% at 66% 72%, rgba(255, 45, 85, 0.15), transparent 70%),
+    radial-gradient(24% 30% at 50% 55%, rgba(52, 199, 89, 0.12), transparent 70%);
+  animation: glow-turn 26s linear infinite;
+}
+@keyframes glow-turn {
+  to { rotate: 360deg; }
+}
+
+/* Flying logo tiles. Three layers so the motions never fight:
+   .tile (scroll) › .tile__in (load fly-in) › .tile__bob (idle float). */
+.tile {
+  position: absolute;
+  top: var(--y);
+  left: var(--x);
+  width: var(--size);
+  height: var(--size);
+  margin: calc(var(--size) / -2) 0 0 calc(var(--size) / -2);
+  will-change: transform, opacity;
+}
+.tile__in {
+  display: block;
+  width: 100%;
+  height: 100%;
+  transform: rotate(var(--tilt));
+}
+.tile__bob {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 28%;
+  background: linear-gradient(160deg, #ffffff, #f2f2f5);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04), 0 10px 28px rgba(0, 0, 0, 0.1),
+    inset 0 0 0 1px rgba(0, 0, 0, 0.04);
+  color: var(--brand, var(--text));
+  font-size: calc(var(--size) * 0.46);
+  animation: tile-bob var(--bob) ease-in-out var(--delay) infinite alternate;
+}
+/* Far tiles sit back: smaller shadow, slightly out of focus. */
+.tile--far .tile__bob {
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.07), inset 0 0 0 1px rgba(0, 0, 0, 0.04);
+  filter: blur(1.2px);
+}
+@keyframes tile-bob {
+  from { transform: translate3d(0, -7px, 0) rotate(-2deg); }
+  to { transform: translate3d(0, 7px, 0) rotate(2deg); }
+}
+
+/* ---------- Intro: name + title ---------- */
+
+.hero__intro {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: clamp(14px, 2vw, 24px);
+  padding: var(--nav-h) var(--gutter) 0;
+  text-align: center;
+  will-change: transform, opacity;
+}
+
+.hero__name {
+  font-size: var(--fs-hero);
+  font-weight: 700;
+  letter-spacing: var(--tracking-hero);
+  line-height: 1;
+}
+
+/* Soft mask: words rise through a feathered bottom edge. */
+.hero__mask {
+  display: inline-block;
+  overflow: clip;
+  padding: 0.04em 0.02em 0.14em;
+  margin-bottom: -0.14em;
+  -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 0.16em), transparent);
+  mask-image: linear-gradient(to bottom, #000 calc(100% - 0.16em), transparent);
+  white-space: pre;
+}
+.hero__word {
+  display: inline-block;
+  will-change: transform, opacity, filter;
+}
+
+.hero__subtitle {
+  color: var(--text-secondary);
+  font-family: var(--font-sans);
+  font-size: var(--fs-lead);
+  font-weight: 400;
+  letter-spacing: var(--tracking-body);
+}
+.hero__role {
+  white-space: nowrap;
+}
+
+.hero__hint {
+  position: absolute;
+  bottom: max(28px, 4svh);
+  left: 50%;
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+  translate: -50% 0;
+  color: var(--text-tertiary);
+  font-size: var(--fs-micro);
+  letter-spacing: 0.02em;
+}
+.hero__hint::after {
+  content: "";
+  width: 1px;
+  height: 36px;
+  background: linear-gradient(var(--text-tertiary), transparent);
+  transform-origin: top;
+  animation: hero-hint 2.2s var(--ease-in-out) infinite;
+}
+@keyframes hero-hint {
+  0% { transform: scaleY(0); opacity: 1; }
+  60% { transform: scaleY(1); opacity: 1; }
+  100% { transform: scaleY(1); opacity: 0; }
+}
+
+/* ---------- Claim ---------- */
+
+.hero__claim {
+  position: absolute;
+  inset: var(--claim-top) 0 auto;
+  z-index: 3;
+  padding-inline: var(--gutter);
+  font-family: var(--font-sans);
+  font-size: var(--claim-fs);
+  font-weight: 700;
+  letter-spacing: var(--tracking-display);
+  line-height: 1.05;
+  text-align: center;
+}
+.hero__claim-b {
+  --grad: var(--warm);
+  display: inline-block;
+}
+
+/* ---------- Laptop placement ---------- */
+
+.hero__device-wrap {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: calc(var(--claim-top) + var(--claim-h) + 2svh) 0 4svh;
+  pointer-events: none; /* the laptop itself re-enables pointer events */
+}
+
+/* ---------- Phones ---------- */
+
+@media (max-width: 760px) {
+  .hero {
+    --claim-fs: clamp(2rem, 9vw, 2.75rem);
+    --claim-lines: 2;
+    height: 260svh;
+  }
+  .hero__device-wrap .mac {
+    --w: 94vw;
+  }
+  /* A lighter constellation that hugs the edges. */
+  .tile {
+    --size: 44px !important;
+    top: var(--my);
+    left: var(--mx);
+  }
+  .tile--desktop {
+    display: none;
+  }
+  .hero__sep {
+    display: none;
+  }
+  .hero__role {
+    display: block;
+  }
+  .hero__claim {
+    padding-inline: 12vw;
+  }
+}
+
+/* ---------- Initial states (JS animates from here) ---------- */
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero__word,
+  .hero__subtitle,
+  .hero__hint,
+  .hero__claim,
+  .tile__in,
+  .hero__glow,
+  .mac {
+    opacity: 0;
+  }
+  .hero__claim-b {
+    opacity: 0.2;
+  }
+}
+
+/* ---------- Reduced motion: a calm, static composition ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero {
+    height: auto;
+    padding-bottom: clamp(64px, 9vw, 120px);
+  }
+  .hero__stage {
+    position: relative;
+    display: grid;
+    gap: clamp(40px, 6vw, 72px);
+    height: auto;
+    padding-top: calc(var(--nav-h) + 12svh);
+    overflow: visible;
+    animation: hero-fade 0.8s ease both;
+  }
+  .hero__intro,
+  .hero__claim,
+  .hero__device-wrap {
+    position: relative;
+    inset: auto;
+  }
+  .hero__intro,
+  .hero__device-wrap {
+    padding: 0;
+  }
+  .hero__hint,
+  .hero__depth {
+    display: none;
+  }
+}
+@keyframes hero-fade {
+  from { opacity: 0; }
+}
