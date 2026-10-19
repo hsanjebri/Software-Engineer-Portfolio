@@ -1,0 +1,37 @@
+/* Light sheet resting on the black contact block. */
+.footer {
+  position: relative;
+  z-index: 1;
+  margin-top: -44px;
+  padding: 40px 0 calc(28px + env(safe-area-inset-bottom));
+  border-radius: 44px 44px 0 0;
+  background: var(--bg-alt);
+  color: var(--text-secondary);
+  font-size: var(--fs-micro);
+  line-height: 1.5;
+}
+
+.footer__nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 24px;
+  margin: 0;
+  padding: 0 0 16px;
+  list-style: none;
+  border-bottom: 1px solid var(--hairline-strong);
+}
+.footer__nav a {
+  color: var(--text);
+  opacity: 0.8;
+}
+.footer__nav a:hover {
+  opacity: 1;
+}
+
+.footer__legal {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 6px 24px;
+  padding-top: 16px;
+}

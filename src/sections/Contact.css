@@ -1,0 +1,73 @@
+.contact {
+  --section-cd: var(--d-pink);
+  min-height: 100svh;
+  display: grid;
+  align-items: center;
+  padding-bottom: clamp(140px, 16vw, 220px); /* room under the footer sheet */
+}
+
+.contact__inner {
+  display: grid;
+  justify-items: center;
+  text-align: center;
+}
+.contact__inner .subhead {
+  margin-inline: auto;
+}
+
+.contact__title {
+  font-size: clamp(3rem, 1.2rem + 8vw, 7.5rem);
+  font-weight: 700;
+  letter-spacing: var(--tracking-hero);
+  line-height: 1;
+}
+
+.contact__email {
+  margin-top: clamp(36px, 5vw, 56px);
+  font-family: var(--font-sans);
+  font-size: clamp(1.375rem, 0.9rem + 2.2vw, 2.5rem);
+  font-weight: 600;
+  letter-spacing: var(--tracking-tight);
+  overflow-wrap: anywhere;
+}
+
+.contact__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 16px 28px;
+  margin-top: 32px;
+}
+
+.contact__socials {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin: clamp(56px, 7vw, 88px) 0 0;
+  padding: 0;
+  list-style: none;
+}
+.contact a.social {
+  display: grid;
+  place-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 18px;
+  background: #1d1d1f;
+  color: var(--text-on-dark);
+  font-size: 22px;
+  box-shadow: inset 0 0 0 1px var(--hairline-on-dark);
+  transition: background var(--dur) var(--ease-out), color var(--dur) ease;
+}
+.contact a.social:hover {
+  background: var(--bb, #2c2c2e);
+  color: var(--bf, #fff);
+}
+
+.contact__meta {
+  margin-top: 40px;
+  color: var(--text-on-dark-secondary);
+  font-size: var(--fs-small);
+}
