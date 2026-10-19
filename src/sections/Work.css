@@ -1,0 +1,230 @@
+/* ---------- Featured deck ---------- */
+
+.work {
+  --section-c: var(--l-pink);
+}
+
+.stack {
+  display: grid;
+  gap: clamp(28px, 5vw, 48px);
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+}
+
+.card {
+  position: relative;
+  border-radius: var(--radius-lg);
+  background: var(--bg-elevated);
+  box-shadow: var(--shadow-lg), 0 50px 110px -50px var(--hue-glow, transparent);
+  will-change: transform;
+}
+
+.card__tilt {
+  display: grid;
+  grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+  height: 100%;
+  border-radius: inherit;
+  overflow: hidden;
+  background: var(--bg-elevated);
+}
+.card--flip .card__tilt {
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
+}
+.card--flip .card__media {
+  order: 2;
+}
+
+.card__shade {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: rgba(0, 0, 0, 0.28);
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Media frames (shared with the mini cards) */
+.card__media,
+.mini__media {
+  position: relative;
+  overflow: hidden;
+  background: var(--bg-alt);
+}
+.card__media img,
+.mini__media img {
+  width: 100%;
+  height: 100%;
+}
+/* Website screenshots: keep the top-left (nav + headline) in frame. */
+.card__media--cover img {
+  object-fit: cover;
+  object-position: 0% 0%;
+}
+.card__media--contain {
+  display: grid;
+  place-items: center;
+  background: radial-gradient(80% 80% at 50% 50%, var(--hue-tint, transparent), transparent), var(--bg-alt);
+}
+.card__media--contain img {
+  width: 70%;
+  height: 70%;
+  object-fit: contain;
+}
+.card__media--dark {
+  background: #0b0b0c;
+}
+
+.card__body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
+  padding: clamp(28px, 4vw, 56px);
+}
+
+.card__index {
+  color: var(--hue-text, var(--text));
+  font-family: var(--font-sans);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+.card__index span {
+  color: var(--text-tertiary);
+  font-weight: 400;
+}
+.card__category {
+  color: var(--hue-text, var(--text-secondary));
+  font-weight: 600;
+  font-size: var(--fs-small);
+}
+.card__title {
+  font-size: clamp(2rem, 1.2rem + 2.6vw, 3.5rem);
+  font-weight: 700;
+  letter-spacing: var(--tracking-display);
+  line-height: 1.02;
+}
+.card__text {
+  color: var(--text-secondary);
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.card__cta {
+  align-self: flex-start;
+  margin-top: 8px;
+}
+
+/* Deck mode: one card per screen, each sticking under the nav. */
+@media (min-width: 900px) and (min-height: 620px) {
+  .stack {
+    gap: 12svh;
+  }
+  .stack__item {
+    position: sticky;
+    top: calc(var(--nav-h) + 4svh);
+    height: min(760px, calc(100svh - var(--nav-h) - 8svh));
+  }
+  .card {
+    height: 100%;
+  }
+}
+
+/* Stacked layout on smaller screens */
+@media not all and (min-width: 900px) and (min-height: 620px) {
+  .card__tilt,
+  .card--flip .card__tilt {
+    grid-template-columns: 1fr;
+  }
+  .card--flip .card__media {
+    order: 0;
+  }
+  .card__media {
+    aspect-ratio: 16 / 10;
+  }
+}
+
+/* ---------- More projects ---------- */
+
+.more {
+  margin-top: clamp(96px, 12vw, 160px);
+}
+.more__title {
+  margin-bottom: clamp(28px, 4vw, 44px);
+  font-size: var(--fs-h2);
+  font-weight: 700;
+  letter-spacing: var(--tracking-display);
+}
+
+.more__grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(14px, 1.6vw, 22px);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.mini {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  background: var(--bg-elevated);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow var(--dur) var(--ease-out);
+}
+.mini:hover {
+  box-shadow: var(--shadow-md);
+}
+.mini__media {
+  aspect-ratio: 16 / 10;
+}
+.mini__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 10px;
+  padding: 22px 24px 26px;
+}
+.mini__title {
+  font-size: 1.3125rem;
+  font-weight: 700;
+  letter-spacing: var(--tracking-tight);
+}
+.mini__text {
+  color: var(--text-secondary);
+  font-size: 0.9375rem;
+  line-height: 1.45;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+.mini .tags {
+  margin-top: auto;
+  padding-top: 6px;
+}
+.mini__link {
+  font-size: 0.9375rem;
+}
+
+.more__all {
+  margin-top: clamp(36px, 5vw, 56px);
+  text-align: center;
+  font-size: var(--fs-lead);
+}
+
+@media (max-width: 1000px) {
+  .more__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 640px) {
+  .more__grid {
+    grid-template-columns: 1fr;
+  }
+}
