@@ -1,0 +1,421 @@
+/* ==========================================================================
+   Design tokens — the whole visual identity lives here.
+   Blue stays the link/CTA colour. The Apple system palette adds colour to
+   sections, logos and display type. No purple, violet or indigo, ever.
+   ========================================================================== */
+
+:root {
+  /* Apple system palette (mirrors src/lib/color.ts) */
+  --c-blue: #0071e3;
+  --c-cyan: #32ade6;
+  --c-green: #34c759;
+  --c-yellow: #ffcc00;
+  --c-orange: #ff9500;
+  --c-pink: #ff2d55;
+  /* Bright variants for black sections */
+  --d-blue: #2997ff;
+  --d-cyan: #64d2ff;
+  --d-green: #30d158;
+  --d-yellow: #ffd60a;
+  --d-orange: #ff9f0a;
+  --d-pink: #ff375f;
+  /* Text-safe variants for light sections */
+  --l-blue: #0066cc;
+  --l-cyan: #0a7ea8;
+  --l-green: #1d7f37;
+  --l-orange: #c44900;
+  --l-pink: #d70f4f;
+
+  --spectrum: linear-gradient(90deg, #2997ff, #64d2ff 20%, #30d158 42%, #ffd60a 62%, #ff9f0a 80%, #ff375f);
+  --spectrum-light: linear-gradient(90deg, #0066cc, #0a7ea8 25%, #1d7f37 50%, #c44900 75%, #d70f4f);
+  --warm: linear-gradient(90deg, #f56300, #ff2d55);
+
+  /* Surfaces */
+  --bg: #fbfbfd;
+  --bg-alt: #f5f5f7;
+  --bg-elevated: #ffffff;
+  --bg-reveal: #000000; /* deliberate "product reveal" blocks only */
+
+  /* Text */
+  --text: #1d1d1f;
+  --text-secondary: #6e6e73;
+  --text-tertiary: #86868b;
+  --text-on-dark: #f5f5f7;
+  --text-on-dark-secondary: #a1a1a6;
+
+  /* Accent — links and CTAs only */
+  --accent: #0071e3;
+  --accent-hover: #0077ed;
+  --accent-on-dark: #2997ff;
+
+  /* Lines */
+  --hairline: rgba(0, 0, 0, 0.08);
+  --hairline-strong: rgba(0, 0, 0, 0.14);
+  --hairline-on-dark: rgba(255, 255, 255, 0.12);
+
+  /* Type */
+  --font-sans: -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter",
+    sans-serif;
+  --font-text: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter",
+    sans-serif;
+  --font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas,
+    "Liberation Mono", monospace;
+
+  --fs-hero: clamp(3.25rem, 1.6rem + 7.4vw, 6rem); /* → 96px */
+  --fs-display: clamp(2.5rem, 1.5rem + 4.6vw, 5rem); /* → 80px */
+  --fs-h2: clamp(2rem, 1.3rem + 3vw, 3.5rem); /* → 56px */
+  --fs-h3: clamp(1.5rem, 1.2rem + 1.2vw, 2.125rem); /* → 34px */
+  --fs-lead: clamp(1.1875rem, 1rem + 0.8vw, 1.75rem); /* → 28px */
+  --fs-body: 1.0625rem; /* 17px, Apple body */
+  --fs-small: 0.875rem;
+  --fs-micro: 0.75rem;
+
+  --tracking-hero: -0.045em;
+  --tracking-display: -0.035em;
+  --tracking-tight: -0.022em;
+  --tracking-body: -0.011em;
+
+  /* Shape */
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 28px;
+  --radius-pill: 980px;
+
+  /* Elevation — soft, neutral, never tinted */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04), 0 2px 8px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 2px 6px rgba(0, 0, 0, 0.04), 0 12px 32px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 4px 12px rgba(0, 0, 0, 0.05), 0 30px 80px rgba(0, 0, 0, 0.12);
+
+  /* Layout */
+  --gutter: clamp(16px, 4vw, 44px);
+  --content: 980px;
+  --content-wide: 1200px;
+  --nav-h: 52px;
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 0.2s;
+  --dur: 0.45s;
+
+  /* Legacy aliases for /myworks and /play until they are restyled. */
+  --backgroundColor: #000;
+  --accentColor: var(--accent-on-dark);
+
+  color-scheme: light;
+}
+
+/* ---------- Base ---------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+  overflow-x: clip; /* iOS Safari ignores body overflow for the viewport */
+}
+
+/* Lenis owns smooth scrolling; native smooth would fight it. */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-text);
+  font-size: var(--fs-body);
+  line-height: 1.47;
+  letter-spacing: var(--tracking-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  font-synthesis: none;
+  overflow-x: clip;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  letter-spacing: var(--tracking-tight);
+  line-height: 1.07;
+}
+
+p {
+  margin: 0;
+}
+
+img,
+video,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+}
+
+/* Visible, consistent focus for keyboard users only */
+:focus {
+  outline: none;
+}
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+::selection {
+  background: rgba(0, 113, 227, 0.18);
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: fixed;
+  top: 12px;
+  left: 12px;
+  z-index: 1000;
+  padding: 10px 18px;
+  border-radius: var(--radius-pill);
+  background: var(--text);
+  color: #fff;
+  font-size: var(--fs-small);
+  transform: translateY(-200%);
+  transition: transform var(--dur-fast) var(--ease-out);
+}
+.skip-link:focus-visible {
+  transform: none;
+}
+
+/* ---------- Shared primitives ---------- */
+
+.container {
+  width: min(100% - 2 * var(--gutter), var(--content-wide));
+  margin-inline: auto;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  min-height: 44px;
+  padding: 0 22px;
+  border: 0;
+  border-radius: var(--radius-pill);
+  background: var(--accent);
+  color: #fff;
+  font-size: var(--fs-body);
+  font-weight: 400;
+  cursor: pointer;
+  transition: background var(--dur-fast) ease, transform var(--dur-fast) ease;
+}
+.btn:hover {
+  background: var(--accent-hover);
+  text-decoration: none;
+}
+.btn:active {
+  transform: scale(0.97);
+}
+
+.link-arrow::after {
+  content: " ›";
+}
+
+.section-dark {
+  background: var(--bg-reveal);
+  color: var(--text-on-dark);
+}
+.section-dark a:not(.btn) {
+  color: var(--accent-on-dark);
+}
+.section-alt {
+  background: var(--bg-alt);
+}
+
+/* ---------- Sections ---------- */
+
+.section {
+  position: relative;
+  padding-block: clamp(104px, 13vw, 176px);
+  /* Cards wait off to the side before they fly in; never let that widen the
+     page. `clip` (unlike `hidden`) keeps position: sticky working. */
+  overflow-x: clip;
+}
+
+/* A section that slides up over the previous one like a sheet.
+   --r is animated to 0 by lib/scenes.ts as it reaches the top. */
+.sheet {
+  --sheet-overlap: 44px;
+  --r: var(--sheet-overlap);
+  position: relative;
+  z-index: 1;
+  margin-top: calc(-1 * var(--sheet-overlap));
+  border-radius: var(--r) var(--r) 0 0;
+}
+
+.section-head {
+  margin-bottom: clamp(56px, 8vw, 104px);
+}
+
+/* Each section sets --section-c (light) / --section-cd (dark) for its eyebrow. */
+.eyebrow {
+  margin-bottom: 14px;
+  color: var(--section-c, var(--text-secondary));
+  font-family: var(--font-sans);
+  font-size: clamp(1.0625rem, 0.9rem + 0.55vw, 1.5rem);
+  font-weight: 600;
+  letter-spacing: var(--tracking-tight);
+}
+.section-dark .eyebrow {
+  color: var(--section-cd, var(--text-on-dark-secondary));
+}
+
+/* Gradient display type */
+.text-gradient,
+.w--grad .w__in {
+  background-image: var(--grad, linear-gradient(90deg, var(--gf), var(--gt)));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+}
+/* Keep descenders inside the painted area. */
+.w--grad .w__in {
+  padding-bottom: 0.08em;
+  margin-bottom: -0.08em;
+}
+
+/* ---------- Scroll progress ---------- */
+.progress {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 101;
+  height: 3px;
+  background: var(--spectrum);
+  transform: scaleX(0);
+  transform-origin: left;
+  pointer-events: none;
+}
+
+/* The custom cursor replaces the system one on fine pointers only. */
+html.has-cursor,
+html.has-cursor * {
+  cursor: none !important;
+}
+
+.headline {
+  max-width: 16ch;
+  font-size: var(--fs-display);
+  font-weight: 700;
+  letter-spacing: var(--tracking-display);
+  line-height: 1.04;
+}
+
+.subhead {
+  max-width: 34ch;
+  margin-top: 22px;
+  color: var(--text-secondary);
+  font-family: var(--font-sans);
+  font-size: var(--fs-lead);
+  font-weight: 500;
+  letter-spacing: var(--tracking-tight);
+  line-height: 1.25;
+}
+.section-dark .subhead {
+  color: var(--text-on-dark-secondary);
+}
+
+/* Per-word masks for headline reveals (ui/Words.tsx) */
+.w {
+  display: inline-block;
+}
+.w--mask {
+  overflow: clip;
+  padding-bottom: 0.12em;
+  margin-bottom: -0.12em;
+  vertical-align: top;
+}
+.w__in {
+  display: inline-block;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.tags li {
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  background: rgba(0, 0, 0, 0.05);
+  color: var(--text-secondary);
+  font-size: var(--fs-micro);
+  font-weight: 500;
+  white-space: nowrap;
+}
+.section-dark .tags li {
+  background: rgba(255, 255, 255, 0.08);
+  color: var(--text-on-dark-secondary);
+}
+
+.btn--ghost {
+  background: transparent;
+  color: var(--accent);
+  box-shadow: inset 0 0 0 1px currentColor;
+}
+.btn--ghost:hover {
+  background: rgba(0, 113, 227, 0.06);
+}
+
+/* Reduced motion: stop looping keyframes. Opacity fades stay (components
+   swap movement for fades themselves). */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-iteration-count: 1 !important;
+  }
+}
