@@ -200,7 +200,7 @@ const TechStack = () => {
   const current = stackLayers.find((l) => l.id === layer);
 
   return (
-    <section id="stack" ref={root} className="stack section sheet" aria-labelledby="stack-title">
+    <section id="stack" ref={root} className="techstack section sheet" aria-labelledby="stack-title">
       <div data-exit>
         <div className="container">
           <header className="section-head stack__head">
