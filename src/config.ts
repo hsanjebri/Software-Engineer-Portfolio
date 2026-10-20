@@ -138,10 +138,10 @@ export const config = {
         {
             position: "Software Engineer",
             company: "DinoByte Information Technology, Dubai, UAE (Remote)",
-            period: "Sep. 2025 - Present",
+            period: "Sep. 2025 - Jul. 2026",
             location: "Dubai, UAE (Remote)",
             description:
-                "Working as a core full-time Software Engineer for DinoByte Information Technology (Dubai, UAE), contributing to the company's technology projects with a full-time commitment (40h/week).",
+                "Worked as a core full-time Software Engineer for DinoByte Information Technology (Dubai, UAE), contributing to the company's technology projects with a full-time commitment (40h/week).",
             responsibilities: [
                 "Front-end and back-end architecture and development",
                 "API design, integration, and maintenance",
