@@ -45,7 +45,7 @@ const t = (name: string, icon?: IconType): Tech => ({ name, icon, color: brand[n
 
 // ---------- Skills (bento) ----------
 // Sources: the old Tech Stack section, config.skills tools, and project stacks
-// (NestJS: SEBN dashboard, FastAPI: Drishti).
+// (NestJS: SEBN dashboard).
 
 export const skillGroups: {
   id: string;

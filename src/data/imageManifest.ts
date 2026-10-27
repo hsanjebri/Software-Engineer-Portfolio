@@ -226,20 +226,6 @@ export const imageManifest: Record<string, ImageMeta> = {
       }
     ]
   },
-  "/images/drishti.png": {
-    "width": 1024,
-    "height": 1024,
-    "variants": [
-      {
-        "src": "/images/opt/drishti-800.webp",
-        "w": 800
-      },
-      {
-        "src": "/images/opt/drishti-1024.webp",
-        "w": 1024
-      }
-    ]
-  },
   "/images/hassan-profile-img.jpg": {
     "width": 1200,
     "height": 1600,
