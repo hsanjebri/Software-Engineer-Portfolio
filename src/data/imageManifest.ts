@@ -4,6 +4,20 @@ export type ImageVariant = { src: string; w: number };
 export type ImageMeta = { width: number; height: number; variants: ImageVariant[] };
 
 export const imageManifest: Record<string, ImageMeta> = {
+  "/images/agentpet.png": {
+    "width": 1890,
+    "height": 900,
+    "variants": [
+      {
+        "src": "/images/opt/agentpet-800.webp",
+        "w": 800
+      },
+      {
+        "src": "/images/opt/agentpet-1600.webp",
+        "w": 1600
+      }
+    ]
+  },
   "/images/AA-VTC.png": {
     "width": 1890,
     "height": 897,
