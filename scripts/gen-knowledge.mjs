@@ -6,18 +6,23 @@ import { fileURLToPath } from "node:url";
 
 const root = fileURLToPath(new URL("..", import.meta.url));
 
+// Bundle config + case studies into one module and import it from memory.
 const out = await build({
-  entryPoints: [`${root}src/config.ts`],
+  stdin: {
+    contents: `export { config } from "./src/config.ts"; export { caseStudies } from "./src/data/caseStudies.ts";`,
+    resolveDir: root,
+    loader: "ts",
+  },
   bundle: true,
   format: "esm",
   platform: "node",
   write: false,
 });
-const { config } = await import(
+const { config, caseStudies } = await import(
   `data:text/javascript;base64,${Buffer.from(out.outputFiles[0].text).toString("base64")}`
 );
 
-const { developer, social, about, experiences, projects, certificates, contact, skills } = config;
+const { developer, social, about, experiences, projects, certificates, contact, skills, proof } = config;
 const lines = [];
 const push = (...l) => lines.push(...l);
 
@@ -55,9 +60,28 @@ for (const p of projects) {
     `### ${p.title} [${p.category}]`,
     p.link ? `Link: ${p.link}` : "No public link.",
     `Tech: ${p.technologies}`,
-    p.description
+    // Projects with a case study are described in full below; skip the duplicate.
+    caseStudies.some((cs) => cs.projectId === p.id) ? "Full story in the case study below." : p.description
   );
 }
+
+push("", "## Case studies (in depth, on the site at /work/<slug>)");
+for (const cs of caseStudies) {
+  const p = projects.find((x) => x.id === cs.projectId);
+  push(
+    "",
+    `### ${p ? p.title : cs.slug}: ${cs.tagline} (page: /work/${cs.slug})`,
+    `Role: ${cs.role}. Year: ${cs.year}. Status: ${cs.status}.`,
+    ...cs.results.map((r) => `- ${r.value} ${r.label}`),
+    "Problem: " + cs.problem.join(" "),
+    "What he built: " + cs.built.join(" "),
+    "Architecture: " + cs.diagram.map((c) => `${c.title} (${c.nodes.map((n) => n.label).join(", ")})`).join(" -> "),
+    ...cs.hard.map((h) => `- Hard part, ${h.title}: ${h.body}`)
+  );
+}
+
+push("", "## In production", ...proof.stats.map((s) => `- ${s.value} ${s.label}`));
+for (const t of proof.testimonials) push(`- Client quote from ${t.name} (${t.role}): "${t.quote}"`);
 
 push("", "## Certificates");
 for (const c of certificates) {
