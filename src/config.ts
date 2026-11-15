@@ -164,6 +164,16 @@ export const config = {
     ],
     projects: [
         {
+            id: 19,
+            title: "Italian Dream",
+            category: "Education / Lead Generation",
+            technologies: "Next.js 15 (App Router), TypeScript, Tailwind CSS v4, Motion, Lenis, next-intl, Supabase, Resend, React Hook Form, Zod, Vercel",
+            image: "/images/italian-dream.png",
+            link: "https://italian-dream-eight.vercel.app/en",
+            description:
+                "\"Your future starts in Italy.\" Website, lead engine and back-office for Italian Dream, a Tunisian agency with offices in Tunis, Sfax and Kairouan that guides students to Italian universities: program choice, Universitaly pre-enrolment, DOV / CIMEA recognition, the DSU scholarship, the student visa and housing.\n\n✨ Key Features\n🎬 Cinematic video hero cross-fading four Italian cities, scroll storytelling, and a Natural Earth map where flight paths draw from Tunis to each city\n🧭 6-step eligibility quiz with a rules-based matcher (programs, cities, DSU likelihood) and a per-city cost calculator\n📨 Lead API with Zod validation, honeypot and rate limiting: leads are saved to Supabase and emailed to the agency via Resend\n🌍 Trilingual: French, English and Arabic with full RTL\n🗂️ Agency back-office and student portal: 12-step journey timeline, document review, applications, deadlines, payments, tasks and live adviser messages\n🔐 Admin / adviser / student roles enforced by Postgres row-level security, not just the UI\n♿ Lenis smooth scroll and Motion animations that respect prefers-reduced-motion"
+        },
+        {
             id: 18,
             title: "AgentPet (Noodle)",
             category: "Desktop App / Developer Tools",
