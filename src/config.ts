@@ -185,13 +185,13 @@ export const config = {
         },
         {
             id: 17,
-            title: "AA-VTC",
+            title: "EJ-VTC",
             category: "Business / Booking",
-            technologies: "HTML, CSS, JavaScript, Leaflet, Vercel Serverless Functions, IGN Géoplateforme API",
-            image: "/images/AA-VTC.png",
-            link: "https://aa-vtc.vercel.app/",
+            technologies: "Angular 20 (standalone, signals, zoneless), TypeScript, RxJS, Leaflet, IGN Géoplateforme API, Vercel Serverless Functions, Karma + Jasmine",
+            image: "/images/ej-vtc.png",
+            link: "https://ej-vtc.vercel.app/",
             description:
-                "\"Anywhere, Anytime.\" A single-page booking site for AA-VTC, a private chauffeur business in Normandy — built as static HTML/CSS/JS with a single Vercel serverless function, no API keys or billing account needed.\n\n✨ Key Features\n🗺️ Free-data map (Leaflet + IGN Plan tiles) showing the service area, tinted to the brand\n📍 Live address suggestions via IGN Géoplateforme geocoding (BAN addresses + places)\n💶 Real-time fare estimator: road-distance pricing via IGN routing, with forfait packages (1h/4h/8h) suggested automatically when they're cheaper\n💬 WhatsApp-first booking flow, with a graceful fallback to pre-filled WhatsApp messages if suggestions, routing or the map are unavailable\n🔒 Rate-limited, same-site-only fare API (20 estimates/min per visitor)"
+                "\"Anywhere, Anytime.\" The booking site for EJ-VTC, a private chauffeur business in Le Havre and Normandy, rebuilt in Angular 20: same design, content and prices as the production site (ej-vtc.fr), with the interface rewritten as standalone components driven by signals.\n\n✨ Key Features\n⚡ Zoneless Angular 20: no NgModules, no zone.js, every view driven by signals; 63 kB of gzipped JavaScript\n💶 Real-time fare estimator: road distance via IGN routing, priced on the server (never in the browser), with airport and hourly packages suggested automatically when they're cheaper\n📍 Accessible address combobox (WAI-ARIA) with live IGN Géoplateforme suggestions; switchMap cancels stale requests\n🗺️ Leaflet + IGN route map, loaded on demand only when a visitor uses the estimator\n💬 WhatsApp-first booking with pre-filled messages\n🔒 Same-site-only, rate-limited fare API (Vercel serverless function) that rejects scripted clients\n🧪 20 unit tests (Karma + Jasmine)"
         },
         {
             id: 16,

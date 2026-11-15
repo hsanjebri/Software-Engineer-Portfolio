@@ -109,7 +109,7 @@ export const skillGroups: {
 // Everything in Skills plus tools named in project/experience stacks:
 // JWT (Accompany), Stripe (Leggy), Socket.io/TypeORM/Railway/Vercel (SEBN),
 // Fastify/Drizzle/Turborepo/pnpm/Claude/OpenAI (Logsy), GSAP (Rowan Hawthorne),
-// Leaflet/Gemini (Dosya, AA-VTC), Vite (this site).
+// Leaflet/Gemini (Dosya, EJ-VTC), Vite (this site).
 const stackExtras: Record<string, Tech[]> = {
   backend: [t("Socket.io", SiSocketdotio), t("Fastify", SiFastify), t("TypeORM", SiTypeorm), t("Drizzle", SiDrizzle), t("JWT", SiJsonwebtokens), t("Stripe", SiStripe)],
   frontend: [t("GSAP", SiGreensock), t("Leaflet", SiLeaflet), t("Vite", SiVite)],

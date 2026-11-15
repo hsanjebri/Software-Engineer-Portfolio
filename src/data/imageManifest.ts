@@ -32,16 +32,16 @@ export const imageManifest: Record<string, ImageMeta> = {
       }
     ]
   },
-  "/images/AA-VTC.png": {
+  "/images/ej-vtc.png": {
     "width": 1890,
-    "height": 897,
+    "height": 900,
     "variants": [
       {
-        "src": "/images/opt/aa-vtc-800.webp",
+        "src": "/images/opt/ej-vtc-800.webp",
         "w": 800
       },
       {
-        "src": "/images/opt/aa-vtc-1600.webp",
+        "src": "/images/opt/ej-vtc-1600.webp",
         "w": 1600
       }
     ]
