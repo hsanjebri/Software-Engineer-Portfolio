@@ -13,6 +13,7 @@ import Contact from "../sections/Contact";
 import Footer from "../sections/Footer";
 import Cursor from "../ui/Cursor";
 import ScrollProgress from "../ui/ScrollProgress";
+import Agent from "../ui/agent/Agent";
 import { ScrollTrigger, startSmoothScroll } from "../lib/motion";
 import { initPageScenes } from "../lib/scenes";
 
@@ -52,6 +53,7 @@ const Home = () => {
         <Contact />
       </main>
       <Footer />
+      <Agent />
       <Cursor />
     </>
   );
