@@ -169,7 +169,7 @@ export const formatPeriod = (period: string) => period.replace(" - ", " – ");
 type Project = (typeof config.projects)[number];
 
 /** Shown one per screen; the rest go in the "More projects" grid. */
-const FEATURED = [17, 16, 15, 14, 12, 11, 9, 10];
+const FEATURED = [19, 18, 17, 16, 15, 14, 12, 11, 9, 10];
 /** Poster-style art that should sit on a dark stage. */
 const DARK_STAGE = new Set([9]);
 

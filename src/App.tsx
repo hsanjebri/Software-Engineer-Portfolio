@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/react";
 import Home from "./pages/Home";
 const MyWorks = lazy(() => import("./pages/MyWorks"));
 const Play = lazy(() => import("./pages/Play"));
+const CaseStudy = lazy(() => import("./pages/CaseStudy"));
 
 const App = () => {
   return (
@@ -18,6 +19,14 @@ const App = () => {
           element={
             <Suspense fallback={<div>Loading...</div>}>
               <MyWorks />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/work/:slug"
+          element={
+            <Suspense fallback={<div>Loading...</div>}>
+              <CaseStudy />
             </Suspense>
           }
         />

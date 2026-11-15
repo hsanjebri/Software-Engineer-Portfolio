@@ -113,8 +113,10 @@
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
-.card__cta {
-  align-self: flex-start;
+.card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
   margin-top: 8px;
 }
 

@@ -1,6 +1,7 @@
 import { useLayoutEffect, useRef, type CSSProperties } from "react";
 import { Link } from "react-router-dom";
 import { excerpt, featuredProjects, linkLabel, mediaFit, moreProjects, stackOf } from "../data/site";
+import { caseStudyFor } from "../data/caseStudies";
 import { gsap, FULL_MOTION } from "../lib/motion";
 import { hueAt, palette, withAlpha } from "../lib/color";
 import Img from "../ui/Img";
@@ -189,7 +190,19 @@ const Work = () => {
                           <li key={t}>{t}</li>
                         ))}
                       </ul>
-                      {p.link && <ExternalLink href={p.link} className="btn card__cta" />}
+                      <div className="card__actions">
+                        {caseStudyFor(p.id) && (
+                          <Link to={`/work/${caseStudyFor(p.id)!.slug}`} className="btn" data-cursor-label="Read">
+                            Read the case study
+                          </Link>
+                        )}
+                        {p.link && (
+                          <ExternalLink
+                            href={p.link}
+                            className={caseStudyFor(p.id) ? "btn btn--ghost" : "btn"}
+                          />
+                        )}
+                      </div>
                     </div>
                   </div>
                   <div className="card__shade" aria-hidden="true" />

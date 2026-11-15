@@ -14,7 +14,7 @@ import Footer from "../sections/Footer";
 import Cursor from "../ui/Cursor";
 import ScrollProgress from "../ui/ScrollProgress";
 import Agent from "../ui/agent/Agent";
-import { ScrollTrigger, startSmoothScroll } from "../lib/motion";
+import { ScrollTrigger, scrollToHash, startSmoothScroll } from "../lib/motion";
 import { initPageScenes } from "../lib/scenes";
 
 // Rhythm: light hero → black About → light Skills → white Tech stack → black Experience →
@@ -26,7 +26,11 @@ const Home = () => {
   useEffect(() => {
     const stop = startSmoothScroll();
     // Re-measure pinned scenes once web fonts settle line widths.
-    document.fonts?.ready.then(() => ScrollTrigger.refresh());
+    document.fonts?.ready.then(() => {
+      ScrollTrigger.refresh();
+      // Arriving from another page with a hash (e.g. a case study's "All work").
+      if (location.hash) scrollToHash(location.hash);
+    });
     return stop;
   }, []);
 
