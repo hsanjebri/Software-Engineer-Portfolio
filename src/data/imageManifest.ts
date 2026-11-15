@@ -4,6 +4,132 @@ export type ImageVariant = { src: string; w: number };
 export type ImageMeta = { width: number; height: number; variants: ImageVariant[] };
 
 export const imageManifest: Record<string, ImageMeta> = {
+  "/images/cases/italian-dream-1.png": {
+    "width": 1600,
+    "height": 900,
+    "variants": [
+      {
+        "src": "/images/opt/case-italian-dream-1-800.webp",
+        "w": 800
+      },
+      {
+        "src": "/images/opt/case-italian-dream-1-1600.webp",
+        "w": 1600
+      }
+    ]
+  },
+  "/images/cases/italian-dream-2.png": {
+    "width": 1600,
+    "height": 900,
+    "variants": [
+      {
+        "src": "/images/opt/case-italian-dream-2-800.webp",
+        "w": 800
+      },
+      {
+        "src": "/images/opt/case-italian-dream-2-1600.webp",
+        "w": 1600
+      }
+    ]
+  },
+  "/images/cases/italian-dream-3.png": {
+    "width": 1600,
+    "height": 900,
+    "variants": [
+      {
+        "src": "/images/opt/case-italian-dream-3-800.webp",
+        "w": 800
+      },
+      {
+        "src": "/images/opt/case-italian-dream-3-1600.webp",
+        "w": 1600
+      }
+    ]
+  },
+  "/images/cases/ej-vtc-1.png": {
+    "width": 1600,
+    "height": 900,
+    "variants": [
+      {
+        "src": "/images/opt/case-ej-vtc-1-800.webp",
+        "w": 800
+      },
+      {
+        "src": "/images/opt/case-ej-vtc-1-1600.webp",
+        "w": 1600
+      }
+    ]
+  },
+  "/images/cases/ej-vtc-2.png": {
+    "width": 1600,
+    "height": 900,
+    "variants": [
+      {
+        "src": "/images/opt/case-ej-vtc-2-800.webp",
+        "w": 800
+      },
+      {
+        "src": "/images/opt/case-ej-vtc-2-1600.webp",
+        "w": 1600
+      }
+    ]
+  },
+  "/images/cases/ej-vtc-3.png": {
+    "width": 1600,
+    "height": 900,
+    "variants": [
+      {
+        "src": "/images/opt/case-ej-vtc-3-800.webp",
+        "w": 800
+      },
+      {
+        "src": "/images/opt/case-ej-vtc-3-1600.webp",
+        "w": 1600
+      }
+    ]
+  },
+  "/images/cases/noodle-1.png": {
+    "width": 1600,
+    "height": 900,
+    "variants": [
+      {
+        "src": "/images/opt/case-noodle-1-800.webp",
+        "w": 800
+      },
+      {
+        "src": "/images/opt/case-noodle-1-1600.webp",
+        "w": 1600
+      }
+    ]
+  },
+  "/images/cases/noodle-2.png": {
+    "width": 1600,
+    "height": 900,
+    "variants": [
+      {
+        "src": "/images/opt/case-noodle-2-800.webp",
+        "w": 800
+      },
+      {
+        "src": "/images/opt/case-noodle-2-1600.webp",
+        "w": 1600
+      }
+    ]
+  },
+  "/images/cases/noodle-3.png": {
+    "width": 1600,
+    "height": 900,
+    "variants": [
+      {
+        "src": "/images/opt/case-noodle-3-800.webp",
+        "w": 800
+      },
+      {
+        "src": "/images/opt/case-noodle-3-1600.webp",
+        "w": 1600
+      }
+    ]
+  },
   "/images/italian-dream.png": {
     "width": 1890,
     "height": 900,
