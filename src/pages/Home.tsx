@@ -7,6 +7,7 @@ import TechStack from "../sections/stack/TechStack";
 import Experience from "../sections/Experience";
 import Interlude from "../sections/Interlude";
 import Work from "../sections/Work";
+import Proof from "../sections/Proof";
 import Credentials from "../sections/Credentials";
 import PlaySection from "../sections/play/PlaySection";
 import Contact from "../sections/Contact";
@@ -18,7 +19,7 @@ import { ScrollTrigger, scrollToHash, startSmoothScroll } from "../lib/motion";
 import { initPageScenes } from "../lib/scenes";
 
 // Rhythm: light hero → black About → light Skills → white Tech stack → black Experience →
-// colour dive (Interlude) → light Work → light-gray Credentials →
+// colour dive (Interlude) → light Work → white Proof (numbers) → light-gray Credentials →
 // white Play (game) → black Contact → gray footer.
 const Home = () => {
   const main = useRef<HTMLElement>(null);
@@ -52,6 +53,7 @@ const Home = () => {
         <Experience />
         <Interlude />
         <Work />
+        <Proof />
         <Credentials />
         <PlaySection />
         <Contact />

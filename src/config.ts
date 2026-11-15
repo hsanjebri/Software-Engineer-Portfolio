@@ -380,6 +380,16 @@ export const config = {
             }
         }
     ],
+    // Numbers strip under Work. Every value must be true and checkable.
+    proof: {
+        stats: [
+            { value: "471", label: "people use Noodle, across Tunisia and Europe", href: "/work/noodle" },
+            { value: "2,800+", label: "restaurants on Leggy, the delivery platform I built" },
+            { value: "4", label: "sites live right now: Italian Dream, Noodle, EJ-VTC, Rowan Hawthorne" }
+        ],
+        // Real client quotes only, with their permission. The block stays hidden while this is empty.
+        testimonials: [] as { quote: string; name: string; role: string }[]
+    },
     contact: {
         email: "jebrihassan66@gmail.com",
         github: "https://github.com/hsanjebri",
